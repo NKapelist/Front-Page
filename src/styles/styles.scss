@@ -1,0 +1,19 @@
+@import "_reset.scss";
+@import "_var.scss";
+@import "_header.scss";
+@import "_about.scss";
+@import "_education.scss";
+@import "_technologies.scss";
+@import "_projects.scss";
+@import "_dreamJob.scss";
+@import "_contacts.scss";
+
+
+html, body {
+    display: flex;
+    width: 100%;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+

@@ -1,0 +1,9 @@
+$text_brown: #824c1f;
+
+@mixin margin($horizontal, $vertical) {
+	margin: $horizontal $vertical;
+}
+
+@mixin padding ($horizontal, $vertical) {
+	padding: $horizontal $vertical;
+}

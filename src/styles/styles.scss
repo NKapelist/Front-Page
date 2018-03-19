@@ -17,3 +17,19 @@ html, body {
     align-items: center;
 }
 
+.title_design {
+    font-family: 'Italianno', cursive;
+    font-size: 50px;
+    margin: 0;
+    color: $text_brown;
+    padding-top: 50px;
+}
+
+.text_design {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    color: $text_brown;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+

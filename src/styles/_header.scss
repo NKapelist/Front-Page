@@ -9,7 +9,7 @@
 .menu {
     display: flex;
     width: 90%;
-    height: 55px;
+    height: 60px;
     align-items: center;
     justify-content: space-around;
     padding-left: 5%;
@@ -19,10 +19,9 @@
     font-size: 1em;
     font-family: 'Raleway', sans-serif;
     
-    a {
-        // color: #616161;
-        color: $text_brown;
-    }
+        a {
+            color: $text_brown;
+        }
    
         .menu__item {
             position: relative;
@@ -31,7 +30,7 @@
             margin: 0 0 1.5em;
             line-height: 1;
             margin: 0 0 0.4em;
-            border-bottom: 1px solid #BCAAA4;
+            border-bottom: 1px solid $border_brown;
 
             .menu__item-name {
                 position: relative;
@@ -41,6 +40,7 @@
                 line-height: 1.4;
                 transition: color 0.5s;
                 transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+                // font-weight: bold;
             }
         }
 }
@@ -62,26 +62,16 @@
 }
 
 .menu .menu__item .menu__item-name::before {
-    background: #FFC400;
+    background: $light_orange;
 }
-
-// .menu .menu__item:nth-child(even) .menu__item-name::before {
-//     background: #4E342E;
-// }
 
 /* Hover */
 
 .menu .menu__item:hover,
 .menu .menu__item:focus {
-    color: #E65100;
+    color: $text_orange;
     border-bottom: none;
 }
-
-// .menu .menu__item:nth-child(even):hover,
-// .menu .menu__item:nth-child(even):focus {
-//     color: #E65100;
-//     border-bottom: none;
-// }
 
 .menu .menu__item:hover .menu__item-name::before,
 .menu .menu__item:focus .menu__item-name::before {
@@ -91,24 +81,12 @@
 .pictureAndName {
     display: flex;
     width: 100%;
-    height: 620px;
+    height: 640px;
     align-items: center;
     justify-content: center;
     background-image: url("https://wallpaperscraft.ru/image/gory_tropa_trava_nebo_119900_1366x768.jpg");
     background-position: center;
     background-size: cover;
-
-        .picture {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 45%;
-            height: 90%;
-
-            // img {
-            //    height: 100%;
-            // }
-        }
 
         .name {
             display: flex;
@@ -122,6 +100,17 @@
         h1 {
             font-family: 'Italianno', cursive;
             font-size: 100px;
-           
+            margin: 0;
+            opacity: 0.9;
+            color: $text_orange;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        h3 {
+            font-family: 'Italianno', cursive;
+            color: white;
+            font-size: 50px;
+            margin: 0;
+            text-shadow: 1px 1px 2px black;
         }
     }

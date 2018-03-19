@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require("webpack");
+const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -33,7 +34,15 @@ module.exports = {
 
     plugins: [
      
-        new HtmlWebpackPlugin({template: "./assets/index.template.html"})
+        new HtmlWebpackPlugin({template: "./assets/index.template.html"}),
+
+        new SWPrecacheWebpackPlugin({
+            cacheId: "font-page-" + Math.random(),
+            filename: "service-worker.js",
+            staticFileGlobs: ["build/**.*"],
+            minify: false,
+            stripPrefix: "build/"
+        })
     ],
 	watch: true,
 

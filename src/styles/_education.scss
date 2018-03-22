@@ -1,42 +1,88 @@
 #education {
-    display: flex;
-    width: 100%;
-    height: 500px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  position: relative;
 
+  .education_transparency_background {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: -1;
+      background-color: $light_white;
+      opacity: 0.5;
+  }
+
+  .education_background {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      height: 100%;
+      position: relative;
+      background-color: $light_white;
+      box-shadow: 0px 15px 50px $shadow_blue;
+
+      .education_text {
+        width: 45.3%;
+        height: 100%;
+        position: relative;
+        text-align: center;
+        @include padding (1%,1%);
+
+        // ul {
+        //   width: 100%;
+        //   height: 60%;
+        //   position: relative;
+        //   text-align: center;
+        // }
+
+        a {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          width: 80%;
+          height: 30px;
+          @include padding (10%,10%);
+          text-decoration: none;
+          
+          .material-icons {
+              color: $text_orange;
+              background-color: $text_blue;
+          }
+      }  
+      }
+        
+      .bevelled_block {
+        width:52.7%;
+        height: 100%;
+
+        .bevelled_block_two {
+          float: right;
+          width:50%;
+          height: 100%;
+          background: linear-gradient(to top, $light_white, $light_brown);
+          position: relative;
+        }
+      }      
+  }
 }
 
-.education_text {
-    width:47.7%;
-    height: 100%;
-    position: relative;
-    text-align: center;
-
-  }
-
-.bevelled_block {
-    width:52.3%;
-    height: 100%;
+.bevelled_block_two:after{
+  content: '';
+  position: absolute;
+  right:100%;
+  top:0;
+  height:100%;
+  width:100%;
+  background: linear-gradient(to top, $light_white, $light_brown);
+  transform:skew(8deg);
+  transform-origin:0 0;
 }
-
-.bevelled_block_two{
-    float: right;
-    width:50%;
-    height: 100%;
-    background: linear-gradient(to top, #fefcea, #8D6E63);
-    position: relative;
-  }
-  .bevelled_block_two:after{
-    content: '';
-    position: absolute;
-    right:100%;
-    top:0;
-    height:100%;
-    width:100%;
-    background: linear-gradient(to top, #fefcea, #8D6E63);
-    transform:skew(8deg);
-    transform-origin:0 0;
-  }
 
   

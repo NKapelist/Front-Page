@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require("webpack");
 const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
 
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -42,7 +43,13 @@ module.exports = {
             staticFileGlobs: ["build/**.*"],
             minify: false,
             stripPrefix: "build/"
-        })
+        }),
+
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+          }),
     ],
 	watch: true,
 

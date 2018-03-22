@@ -1,7 +1,19 @@
+$shadow_blue: #241d2f;
+$text_yellow: #FFEB3B;
+$light_blue: #8eb4ca;
+$light_white: #ecedef;
+$text_orange: #dcb032;
+$text_blue: #3b435d;
+$light_brown: #BCAAA4;
+
+
+
+
+
 $text_brown: #824c1f;
 $border_brown: #BCAAA4;
 $light_orange: #FFC400;
-$text_orange: #F57F17;
+$text_orange_two: #F57F17;
 
 @mixin margin($horizontal, $vertical) {
 	margin: $horizontal $vertical;

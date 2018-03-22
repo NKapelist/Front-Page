@@ -1,48 +1,161 @@
 #header {
     display: flex;
-    width: 100%;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-}
-   
-.menu {
-    display: flex;
-    width: 90%;
-    height: 60px;
-    align-items: center;
-    justify-content: space-around;
-    padding-left: 5%;
-    padding-right: 5%;
+    width: 100%;
+    height: 700px;
     position: relative;
-    z-index: 10;
-    font-size: 1em;
-    font-family: 'Raleway', sans-serif;
-    
-        a {
-            color: $text_brown;
-        }
-   
-        .menu__item {
-            position: relative;
-            display: block;
-            outline: none;
-            margin: 0 0 1.5em;
-            line-height: 1;
-            margin: 0 0 0.4em;
-            border-bottom: 1px solid $border_brown;
 
-            .menu__item-name {
+    .header_transparency_background {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        background-image: url("https://www.thinkmakeshareblog.com/wp-content/uploads/Butterfly-and-Floral-Wallpaper-_-thinkmakeshareblog.jpg");
+        background-position: center;
+        background-size: cover;
+        opacity: 0.5;
+
+        .menu_line {
+            display: flex;
+            flex-flow: row nowrap;
+            width: 100%;
+            height: 70px;
+            position: absolute;
+            background-color: $shadow_blue;
+            opacity: 0.8;
+            box-shadow: 0 15px 50px $shadow_blue;
+        }
+    }
+
+    .header_background {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 100%;
+        position: relative;
+        background-image: url("https://www.thinkmakeshareblog.com/wp-content/uploads/Butterfly-and-Floral-Wallpaper-_-thinkmakeshareblog.jpg");
+        background-position: center;
+        background-size: cover;
+        box-shadow: 0 15px 50px $shadow_blue;
+
+        .header_menu {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 70px;
+            position: relative;
+            box-shadow: 0 0 50px $shadow_blue;
+                
+            .header_menu_transparency {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background-color: $shadow_blue;
+                opacity: 0.8;
+            }
+
+            .header_menu_items {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                color: white;
+            }   
+        }
+
+        .header_text {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            height: 630px;
+            position: relative;
+
+            .name {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+                width: 300px;
+                height: 300px;
                 position: relative;
-                display: inline-block;
-                font-size: 1em;
-                padding: 0 0.35em;
-                line-height: 1.4;
-                transition: color 0.5s;
-                transition-timing-function: cubic-bezier(0.2,1,0.3,1);
-                // font-weight: bold;
+                background-color: white;
+                right: -150px;
+                box-shadow: 0 0 50px $shadow_blue;
+                font-family: 'Italianno', cursive;
+                color: $shadow_blue;
+                font-size: 30px;
+                @include padding (10px,10px);   
+            }
+
+            .profession {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 300px;
+                height: 100px;
+                position: relative;
+                background-color: $shadow_blue;
+                left: -100px;
+                top: -150px;
+                box-shadow: 0 0 50px $shadow_blue;
+                font-family: 'Raleway', sans-serif;
+                color: white;
+                @include padding (10px,10px);
             }
         }
+    }
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    height: 60px;
+    position: relative;
+    z-index: 10;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 1em;
+    font-family: 'Raleway', sans-serif;
+        
+    a {
+        color: $text_yellow;
+    }
+       
+    .menu__item {
+        display: block;
+        position: relative;
+        outline: none;
+        margin: 0 0 1.5em;
+        line-height: 1;
+        margin: 0 0 0.4em;
+    
+        .menu__item-name {
+            display: inline-block;
+            position: relative;
+            font-size: 1em;
+            padding: 0 0.35em;
+            line-height: 1.4;
+            transition: color 0.5s;
+            transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+        }
+    }
 }
 
 .menu .menu__item-name::before {
@@ -57,20 +170,16 @@
 	transform: scale3d(0,1,1);
 	transform-origin: 0% 50%;
 	transition: transform 0.5s;
-    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
-    
+    transition-timing-function: cubic-bezier(0.2,1,0.3,1); 
 }
 
 .menu .menu__item .menu__item-name::before {
-    background: $light_orange;
+    background: #8eb4ca;
 }
-
 /* Hover */
-
 .menu .menu__item:hover,
 .menu .menu__item:focus {
-    color: $text_orange;
-    border-bottom: none;
+    color: white;
 }
 
 .menu .menu__item:hover .menu__item-name::before,
@@ -78,39 +187,14 @@
     transform: scale3d(1,1,1);
 }
 
-.pictureAndName {
-    display: flex;
-    width: 100%;
-    height: 640px;
-    align-items: center;
-    justify-content: center;
-    background-image: url("https://wallpaperscraft.ru/image/gory_tropa_trava_nebo_119900_1366x768.jpg");
-    background-position: center;
-    background-size: cover;
-
-        .name {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            align-items: center;
-            width: 45%;
-            height: 90%;
-        }
-
-        h1 {
-            font-family: 'Italianno', cursive;
-            font-size: 100px;
-            margin: 0;
-            opacity: 0.9;
-            color: $text_orange;
-            text-shadow: 1px 1px 2px black;
-        }
-
-        h3 {
-            font-family: 'Italianno', cursive;
-            color: white;
-            font-size: 50px;
-            margin: 0;
-            text-shadow: 1px 1px 2px black;
-        }
-    }
+.name_text {
+    position: relative;
+}
+.name_text:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    border-bottom: 1px solid $shadow_blue;
+    content:"";
+}

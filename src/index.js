@@ -1,6 +1,9 @@
 import './styles/styles.scss';
+import ctrl from './controllers/currencyCtrl.js';
+ctrl.render();
 import Isotope from "isotope-layout";
 import $ from "jquery";
+import 'owl.carousel';
 
 
 (function() {
@@ -9,50 +12,22 @@ import $ from "jquery";
     }
 })();
 
-// $(document).ready(function(){
-
-// //     let grid = new Isotope('.grid', {
-// //         itemSelector: '.grid-item',
-// //         layoutMode: 'fitRows',
-// // });
-//     var $grid = $('.grid').isotope({
-//         itemSelector: '.grid-item'
-//       });
-      
-//       // store filter for each group
-//       var filters = [];
-      
-//       // change is-checked class on buttons
-//       $('.filters').on( 'click', 'button', function( event ) {
-//         var $target = $( event.currentTarget );
-//         $target.toggleClass('is-checked');
-//         var isChecked = $target.hasClass('is-checked');
-//         var filter = $target.attr('data-filter');
-//         if ( isChecked ) {
-//           addFilter( filter );
-//         } else {
-//           removeFilter( filter );
-//         }
-//         // filter isotope
-//         // group filters together, inclusive
-//         $grid.isotope({ filter: filters.join(',') });
-//       });
+$(document).ready(function(){
+	
+    $('#custom_conv').on('change', function () {
         
-//       function addFilter( filter ) {
-//         if ( filters.indexOf( filter ) == -1 ) {
-//           filters.push( filter );
-//         }
-//       }
-      
-//       function removeFilter( filter ) {
-//         var index = filters.indexOf( filter);
-//         if ( index != -1 ) {
-//           filters.splice( index, 1 );
-//         }
-//       }
-
-// })
-
-
+        let custom_input = $('input:checked').val();
+        let custom_res = $('#custom_conv').val() * custom_input;
+        let my_res = 500 * $('#USD').val();
     
+        $('.curr_radio').on('click', 'input', function() {
+            
+            $('#custom_conv').val(custom_res / $('input:checked').val());
+            $('#my_conv').val(my_res / $('input:checked').val());
+            });
+        });
+        
+});	
+
+
 

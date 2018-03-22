@@ -1,40 +1,129 @@
 #about {
     display: flex;
-    width: 100%;
-    height: 500px;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    
-    .bevelled_edge {
-        width:53%;
-        height: 100%; 
+    width: 100%;
+    height: 500px;
+    position: relative;
+
+    .about_transparency_background {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        background-color: $light_white;
+        opacity: 0.5;
     }
 
-        .bevelled_edge_block{
-            width:50%;
-            height: 100%;
-            background: linear-gradient(to bottom, #fefcea, #f1da36);
-            position: relative;
-        }
-    
-    .about_text {
-        width:47%;
+    .about_background {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
         height: 100%;
         position: relative;
-        text-align: center;
+        background-color: $light_white;
+        box-shadow: 0 15px 50px $shadow_blue;
 
+        .bevelled_edge {
+            width: 53%;
+            height: 100%;
+            position: relative; 
+
+            .about_photo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 97%;
+                height: 97%;
+                position: absolute;
+                @include padding (3%,3%);
+
+                .border_white {
+                    width: 40%;
+                    height: 40%;
+                    position: relative;
+                    background-color: white;
+                    z-index: 1;
+                    right: -15%;
+                    box-shadow: 10px 10px 50px $shadow_blue;
+                }
+
+                .border_blue {
+                    width: 40%;
+                    height: 60%;
+                    position: relative;
+                    background-color: $text_blue;
+                    z-index: 1;
+                    left: -10%;
+                    box-shadow: 10px 10px 50px $shadow_blue;
+                }
+
+                .photo {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 35%;
+                    height: 35%;
+                    min-width: 200px;
+                    min-height: 200px;
+                    position: relative;
+                    background: linear-gradient(to bottom, $light_white, $text_orange);
+                    z-index: 1;
+                    left: -35%;
+                    top: -5%;
+                    box-shadow: 10px 10px 50px $shadow_blue;
+                    
+                    img {
+                        width: 80%;
+                        height: 80%;
+                        position: relative;
+                        @include padding (20%,20%);
+                        box-shadow: 0 0 50px $shadow_blue;
+                    }
+                }
+            }
+
+            .bevelled_edge_block{
+                width:50%;
+                height: 100%;
+                background: linear-gradient(to bottom, $light_white, $light_blue);
+                position: relative;
+            }
+        }    
+        
+        .about_text {
+            width:45%;
+            height: 100%;
+            position: relative;
+            text-align: center;
+            @include padding (1%,1%);
+            
+            p {
+                text-indent: 1.5em;
+            }
+
+            a {
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                width: 80%;
+                height: 30px;
+                @include padding (10%,10%);
+                text-decoration: none;
+                
+                .material-icons {
+                    color: $text_orange;
+                    background-color: $text_blue;
+                }
+            }  
+        }
     }
-
 }
-
-// .about_photo {
-//     width:39%;
-//     height: 100%;
-//     background-image: url("http://gdefon.org/_ph/4/2/176578501.jpg");
-//     background-position: center;
-//     background-size: cover;
-// }
-
+    
 .bevelled_edge_block:after{
     content: '';
     position: absolute;
@@ -42,7 +131,7 @@
     top:0;
     height:100%;
     width:100%;
-    background: linear-gradient(to bottom, #fefcea, #f1da36);
+    background: linear-gradient(to bottom, $light_white, $light_blue);
     transform:skew(-8deg);
     transform-origin:0 0;
 }

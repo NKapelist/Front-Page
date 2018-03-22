@@ -6,7 +6,8 @@
 @import "_technologies.scss";
 @import "_portfolio.scss";
 @import "_myDreamJob.scss";
-@import "_contacts.scss";
+@import "_hexagon.scss";
+@import "_contact.scss";
 
 
 html, body {
@@ -17,19 +18,26 @@ html, body {
     align-items: center;
 }
 
+
 .title_design {
     font-family: 'Italianno', cursive;
     font-size: 50px;
     margin: 0;
-    color: $text_brown;
+    color: $text_orange;
     padding-top: 50px;
 }
 
 .text_design {
     font-family: 'Raleway', sans-serif;
     font-size: 1em;
-    color: $text_brown;
+    color: $shadow_blue;
     padding-left: 30px;
     padding-right: 30px;
 }
 
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 30px;
+}

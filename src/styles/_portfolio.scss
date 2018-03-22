@@ -1,16 +1,99 @@
 #portfolio {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 800px;
+  position: relative;
+
+  .portfolio_transparency_background {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: -1;
+      background-color: $light_white;
+      opacity: 0.5;
+  }
+
+  .portfolio_background {
     display: flex;
-    width: 100%;
-    min-height: 600px;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    flex-flow: column nowrap;
-  
-      .portfolio_name {
+    width: 90%;
+    height: 100%;
+    position: relative;
+    background-color: $light_white;
+    box-shadow: 0px 15px 50px $shadow_blue;
+
+    .portfolio_name {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 130px;
+
+      p {
+        margin-bottom: 50px;
+      }
+    }
+
+    .carousel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      height: 550px;
+      background-color: $text_orange;
+      margin-top: 20px;
+      box-shadow: 0px 0px 50px $shadow_blue;
+
+      .wrapper {
         display: flex;
-        width: 100%;
-        height: 130px;
         justify-content: center;
         align-items: center;
-      }
+        width: 95%;
+        height: 90%;
+        padding-right: 40px;
+        
+        .owl-item {
+          display: table;
+        }
+        
+        .owl-carousel .item {
+          height: 450px;
+          background-color: #fc0;
+          display: table-cell;
+          margin: auto;
+        }
+
+        .owl-carousel #one {
+          height: 450px;
+          background-image: url("https://www.thinkmakeshareblog.com/wp-content/uploads/Butterfly-and-Floral-Wallpaper-_-thinkmakeshareblog.jpg");
+          background-position: center;
+          background-size: cover;
+        }
+
+        .owl-carousel #two {
+          height: 450px;
+          background-image: url("https://www.thinkmakeshareblog.com/wp-content/uploads/Feathers-Desktop-Wallpaper-_-thinkmakeshareblog.jpg");
+          background-position: center;
+          background-size: cover;
+        }
+
+        .owl-carousel #three {
+          height: 450px;
+          background-image: url("http://cento.9w0ftl4eczli8705mua.maxcdn-edge.com/wp-content/uploads/2016/11/336572284b033ff9eb844452ae540703.jpg");
+          background-position: center;
+          background-size: cover;
+        }
+      }  
+    }
+  }
 }
